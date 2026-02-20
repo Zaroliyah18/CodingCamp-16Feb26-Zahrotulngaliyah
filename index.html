@@ -5,12 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
     <link rel="stylesheet" href="css/style.css">
+
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
 
-    <header></header>
+    <header>
+        <h1>Todo List</h1>
+    </header> 
 
-    <main></main>
+    <main>
+        <section>
+            <form>
+                <input type="text" id="todo-input" placeholder="Enter a new todo list">
+
+                <input type="date" id="todo-date" placeholder="Enter a date">
+            </form>
+            <button type="submit">Add List</button>
+        </section>
+    </main>
 
     <footer></footer>
 
