@@ -5,27 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
     <link rel="stylesheet" href="css/style.css">
-
-     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<body class="p-6 bg-gray-100 min-h-screen">
 
-    <header>
-        <h1>Todo List</h1>
-    </header> 
+    <header class="mb-6">
+        <h1 class="text-3xl font-bold text-center">Todo List</h1>
+    </header>
 
-    <main>
-        <section>
-            <form>
-                <input type="text" id="todo-input" placeholder="Enter a new todo list">
+    <main class="max-w-3xl mx-auto">
 
-                <input type="date" id="todo-date" placeholder="Enter a date">
-            </form>
-            <button type="submit">Add List</button>
+        <!-- Form Input -->
+        <section class="bg-white p-4 rounded shadow mb-4">
+            <h2 class="text-lg font-semibold mb-3">Add New Todo</h2>
+            <div class="flex gap-2">
+                <input class="border p-2 rounded flex-1" type="text" id="todo-input" placeholder="Enter a new todo">
+                <input class="border p-2 rounded" type="date" id="todo-date">
+                <button class="border p-2 rounded bg-blue-500 text-white px-4" onclick="addTodo()" type="button">Add</button>
+            </div>
         </section>
+
+        <!-- Action Buttons -->
+        <section class="flex justify-between mb-4">
+            <button class="border rounded p-2 bg-red-500 text-white" onclick="deleteTodos()" type="button">Clear All</button>
+            <button class="border rounded p-2 bg-blue-500 text-white" onclick="filterTodos()" type="button" id="filterBtn">Filter Todos</button>
+        </section>
+
+        <!-- Tabel Todo -->
+        <section class="bg-white rounded shadow">
+            <header class="p-4 border-b">
+                <h2 class="text-lg font-semibold">List of Todos</h2>
+            </header>
+
+            <table class="w-full border-collapse" id="todoTable">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="border p-4 text-left">Task</th>
+                        <th class="border p-4 text-left">Due Date</th>
+                        <th class="border p-4 text-left">Status</th>
+                        <th class="border p-4 text-left">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="todoBody">
+                    <tr id="emptyRow">
+                        <td colspan="4" class="text-center text-gray-500 p-6">No todos available</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
     </main>
 
-    <footer></footer>
+    <footer class="mt-8">
+        <p class="text-center text-gray-500 text-sm">© 2026 Todo List App. All rights reserved.</p>
+    </footer>
 
     <script src="js/script.js"></script>
 </body>
